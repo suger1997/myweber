@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+
 /**
  * <p>
  *  前端控制器
@@ -32,7 +33,7 @@ public class UserinfoController {
     @RequestMapping("/Sel")
     public Userinfo Sel(String id){
 
-
+        System.out.println(id);
         return  iUserinfoService.Sel(id);
     }
 }
