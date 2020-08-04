@@ -31,6 +31,8 @@ public class UserinfoController {
 
     @RequestMapping("/Sel")
     public Userinfo Sel(String id){
+
+
         return  iUserinfoService.Sel(id);
     }
 }
