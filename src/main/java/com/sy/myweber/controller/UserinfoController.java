@@ -33,7 +33,7 @@ public class UserinfoController {
     @RequestMapping("/Sel")
     public Userinfo Sel(String id){
 
-        System.out.println(id);
+        System.out.println(id+"--");
         return  iUserinfoService.Sel(id);
     }
 }
