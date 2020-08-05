@@ -37,6 +37,8 @@ public class SysUser extends Model<SysUser> {
 
     private Integer errTimes;
 
+    private Integer isenable;
+
 
     @Override
     protected Serializable pkVal() {

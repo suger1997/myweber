@@ -31,4 +31,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUser> impleme
     public SysUser selectByUser(SysUser sysUser) {
         return sysUserDao.selectByUser(sysUser);
     }
+
+    @Override
+    public void updatestatus(SysUser sysUser) {
+        sysUserDao.updatestatus(sysUser);
+    }
 }

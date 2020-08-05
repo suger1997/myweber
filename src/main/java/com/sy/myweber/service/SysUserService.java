@@ -14,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface SysUserService extends IService<SysUser> {
     SysUser selectById(String id);
     SysUser selectByUser(SysUser sysUser);
+    void updatestatus(SysUser sysUser);
 }

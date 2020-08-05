@@ -15,4 +15,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface SysUserDao extends BaseMapper<SysUser> {
     SysUser selectByUser(SysUser sysUser);
+    void updatestatus(SysUser sysUser);
 }

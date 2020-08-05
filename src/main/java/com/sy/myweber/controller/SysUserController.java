@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author supersuger
@@ -23,12 +26,40 @@ public class SysUserController {
     SysUserService sysUserService;
 
     @RequestMapping("/selectById")
-    public SysUser selectById(String id){
+    public SysUser selectById(String id) {
         return sysUserService.selectById(id);
     }
+
     @RequestMapping("/selectByUser")
-    public SysUser selectByUser(SysUser sysUser){
-        return sysUserService.selectByUser(sysUser);
+    public Object selectByUser(SysUser sysUser) {
+
+        Map<String, Object> result = new HashMap<>();
+        try {
+            //根据用户查询--无结果，抛异常
+            SysUser checkUser = sysUserService.selectByUser(sysUser);
+            //检验密码
+            if (sysUser.getPwd().equals(checkUser.getPwd())) {
+                result.put("sysUser", checkUser);
+                result.put("code", 0);
+            } else {
+                if(checkUser.getErrTimes()>1){
+                    //密码错误 设置密码输入次数
+                    int err = 5;
+                    err = checkUser.getErrTimes() - 1;
+                    checkUser.setErrTimes(err);
+                    sysUserService.updatestatus(checkUser);
+                    result.put("err",err);
+                    result.put("code", 1);
+                }else {
+                    result.put("code",3);
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            result.put("code", 2);
+        }
+        return result;
     }
 
 }
