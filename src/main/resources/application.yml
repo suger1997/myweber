@@ -4,32 +4,25 @@ server:
     context-path:
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
+    type: com.mysql.cj.jdbc.MysqlDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/testsm?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    name: root
-    password: 123456
-
+    username: root
+    password: '123456'
+  thymeleaf:
+    prefix: classpath:/static/
 logging:
   level:
     com:
       sy:
         mapper : debug
-
 mybatis-plus:
   configuration:
-    # 驼峰式命名
     map-underscore-to-camel-case: true
-    # 对所有的 resultMap 都进行自动映射
     auto-mapping-behavior: full
-    # 是否将sql打印到控制面板(该配置会将sql语句和查询的结果都打印到控制台)
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
   mapper-locations: classpath*:mapping/*.xml
   global-config:
-    # 逻辑删除配置
     db-config:
-      # 删除前
       logic-not-delete-value: 1
-      # 删除后
       logic-delete-value: 0
