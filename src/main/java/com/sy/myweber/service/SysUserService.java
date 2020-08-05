@@ -12,5 +12,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-08-05
  */
 public interface SysUserService extends IService<SysUser> {
-    SysUser selectOne();
+    SysUser selectById(String id);
+    SysUser selectByUser(SysUser sysUser);
 }

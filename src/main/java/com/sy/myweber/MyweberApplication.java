@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("com.sy.myweber.mapper")
+@MapperScan("com.sy.myweber.dao")
 public class MyweberApplication {
 
     public static void main(String[] args) {

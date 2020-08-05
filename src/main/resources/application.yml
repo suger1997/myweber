@@ -26,3 +26,5 @@ mybatis-plus:
     db-config:
       logic-not-delete-value: 1
       logic-delete-value: 0
+  type-aliases-package: com.sy.myweber.entity
+
