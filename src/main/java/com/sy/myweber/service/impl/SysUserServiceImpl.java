@@ -36,4 +36,9 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserDao, SysUser> impleme
     public void updatestatus(SysUser sysUser) {
         sysUserDao.updatestatus(sysUser);
     }
+
+    @Override
+    public SysUser getUserByUsername(String username) {
+        return null;
+    }
 }

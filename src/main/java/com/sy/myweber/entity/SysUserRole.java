@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
-import java.time.LocalDateTime;
+import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -16,30 +16,25 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author supersuger
- * @since 2020-08-05
+ * @since 2020-08-06
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-@TableName("sys_user")
-public class SysUser extends Model<SysUser> {
+@TableName("sys_user_role")
+public class SysUserRole extends Model<SysUserRole> {
 
     private static final long serialVersionUID=1L;
 
-    @TableId(value = "id", type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.INPUT)
     private Integer id;
 
-    private String name;
+    @TableField("roleId")
+    private Integer roleId;
 
-    private String pwd;
+    @TableField("userId")
+    private Integer userId;
 
-    private LocalDateTime loginTime;
-
-    private Integer errTimes;
-
-    private Integer isenable;
-
-    private String salt;
 
     @Override
     protected Serializable pkVal() {

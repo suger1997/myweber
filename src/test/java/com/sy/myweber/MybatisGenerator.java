@@ -32,7 +32,7 @@ public class MybatisGenerator {
     /**
      * 要生成的表名
      */
-    private static String[] tables = { "sys_user"};
+    private static String[] tables = { "sys_role","sys_source","sys_source_role","sys_user_role"};
     /**
      * table前缀
      */

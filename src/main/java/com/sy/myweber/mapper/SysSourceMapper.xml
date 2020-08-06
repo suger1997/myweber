@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sy.myweber.dao.SysSourceDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.sy.myweber.entity.SysSource">
+        <id column="id" property="id" />
+        <result column="sourceId" property="sourceId" />
+        <result column="source_name" property="sourceName" />
+        <result column="source_url" property="sourceUrl" />
+        <result column="source_level" property="sourceLevel" />
+        <result column="source_perms" property="sourcePerms" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, sourceId, source_name, source_url, source_level ,source_perms
+    </sql>
+
+</mapper>

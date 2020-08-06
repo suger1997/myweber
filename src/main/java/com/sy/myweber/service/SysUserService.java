@@ -15,4 +15,6 @@ public interface SysUserService extends IService<SysUser> {
     SysUser selectById(String id);
     SysUser selectByUser(SysUser sysUser);
     void updatestatus(SysUser sysUser);
+
+    SysUser getUserByUsername(String username);
 }
