@@ -42,22 +42,24 @@ public class SysUserController {
                 result.put("sysUser", checkUser);
                 result.put("code", 0);
             } else {
-                if(checkUser.getErrTimes()>1){
+                if(checkUser.getErrTimes()>=1){
                     //密码错误 设置密码输入次数
                     int err = 5;
                     err = checkUser.getErrTimes() - 1;
                     checkUser.setErrTimes(err);
                     sysUserService.updatestatus(checkUser);
-                    result.put("err",err);
                     result.put("code", 1);
+                    result.put("msg","密码错误，密码输入剩余"+err+"次，请重新输入！");
                 }else {
                     result.put("code",3);
+                    result.put("msg","账户被冻结！请联系管理员！");
                 }
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             result.put("code", 2);
+            result.put("msg","查无此用户");
         }
         return result;
     }
