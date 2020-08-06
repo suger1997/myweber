@@ -1,3 +1,4 @@
+/*
 package com.sy.myweber.conf;
 
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
@@ -14,20 +15,24 @@ import org.springframework.context.annotation.Configuration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+*/
 /**
  * @author lidai
  * @date 2018/10/30 16:41
- */
+ *//*
+
 @Configuration
 public class ShiroConfig {
 
     public static final String LOGIN_URL="/login";
     public static final String SUCCESS_URL="/index";
 
-    /**
+    */
+/**
      * 管理bean生命周期
      * @return
-     */
+     *//*
+
     @Bean
     public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
         return new LifecycleBeanPostProcessor();
@@ -62,10 +67,12 @@ public class ShiroConfig {
         return myShiroRealm;
     }
 
-    /**
+    */
+/**
      * 凭证匹配，加密算法
      * @return
-     */
+     *//*
+
     @Bean
     public HashedCredentialsMatcher hashedCredentialsMatcher(){
         HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
@@ -74,11 +81,13 @@ public class ShiroConfig {
         return hashedCredentialsMatcher;
     }
 
-    /**
+    */
+/**
      * 开启shiro 注解支持
      * @param securityManager
      * @return
-     */
+     *//*
+
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(SecurityManager securityManager){
         AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
@@ -86,10 +95,12 @@ public class ShiroConfig {
         return authorizationAttributeSourceAdvisor;
     }
 
-    /**
+    */
+/**
      * 开启shiro授权注解，若上面Bean未生效则使用此Bean
      * @return
-     */
+     *//*
+
     @Bean
     @ConditionalOnMissingBean
     public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
@@ -100,3 +111,4 @@ public class ShiroConfig {
 
 
 }
+*/

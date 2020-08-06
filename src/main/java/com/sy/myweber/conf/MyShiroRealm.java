@@ -1,3 +1,4 @@
+/*
 package com.sy.myweber.conf;
 
 
@@ -20,10 +21,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.stream.Collectors;
 
+*/
 /**
  * @author supersuger
  * @date 2020/08/06
- */
+ *//*
+
 public class MyShiroRealm extends AuthorizingRealm{
 
     @Autowired
@@ -35,11 +38,13 @@ public class MyShiroRealm extends AuthorizingRealm{
     @Autowired
     private SysSourceService sysSourceService;
 
-    /**
+    */
+/**
      * 授权
      * @param principalCollection 身份集合
      * @return
-     */
+     *//*
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
@@ -51,12 +56,14 @@ public class MyShiroRealm extends AuthorizingRealm{
         return simpleAuthorizationInfo;
     }
 
-    /**
+    */
+/**
      * 认证
      * @param authenticationToken token
      * @return
      * @throws AuthenticationException
-     */
+     *//*
+
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         String username= (String) authenticationToken.getPrincipal();
@@ -74,10 +81,12 @@ public class MyShiroRealm extends AuthorizingRealm{
         return simpleAuthenticationInfo;
     }
 
-    /**
+    */
+/**
      * 清理缓存权限
-     */
+     *//*
+
     public void clearCachedAuthorizationInfo() {
         this.clearCachedAuthorizationInfo(SecurityUtils.getSubject().getPrincipals());
     }
-}
+}*/
